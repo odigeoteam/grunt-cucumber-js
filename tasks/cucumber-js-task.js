@@ -16,6 +16,7 @@ module.exports = function (grunt) {
     var support = options.support;
     var modulePath = options.modulePath;
     var coffee = options.coffee;
+    var strict = options.strict;
 
     grunt.verbose.writeflags(options, 'Options');
 
@@ -90,6 +91,10 @@ module.exports = function (grunt) {
 
     if (coffee) {
       execOptions.push('--coffee');
+    }
+
+    if (strict) {
+      execOptions.push('--strict');
     }
 
     var cucumberPath = 'cucumber';
