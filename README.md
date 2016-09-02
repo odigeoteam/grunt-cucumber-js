@@ -88,10 +88,10 @@ Type: `String`
 
 Default: `'cucumber'`
 
-Used to set the path to Cucumber.js's `lib/cucumber.js` 
-file if you don't want to load it from the `npm_modules` 
+Used to set the path to Cucumber.js's `lib/cucumber.js`
+file if you don't want to load it from the `npm_modules`
 directory using the default `require('cucumber')`. Useful for running
-customized versions of Cucumber.js for a specific project. 
+customized versions of Cucumber.js for a specific project.
 It is helpful when you need to modify the Cucumber.js lib
 but you can not open source the contributions.
 
@@ -103,6 +103,13 @@ Type: `Boolean`
 Default: `false`
 
 When true, cucumberjs will output code snippets in coffeescript
+
+#### strict
+Type: `Boolean`
+
+Default: `false`
+
+When true, cucumberjs will fail if there are any undefined or pending steps
 
 ### Usage Examples
 
