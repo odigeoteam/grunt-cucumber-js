@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 module.exports = function (grunt) {
 
   // The Cucumber Task
@@ -8,12 +10,12 @@ module.exports = function (grunt) {
     // Load all the options
     var options = this.options();
 
-    var steps = grunt.option('steps') || options.steps;
-    var tags = grunt.option('tags') || options.tags;
-    var format = grunt.option('format') || options.format;
-    var support = grunt.option('support') || options.support;
-    var modulePath = grunt.option('modulePath') || options.modulePath;
-    var coffee = grunt.option('coffee') || options.coffee;
+    var steps = options.steps;
+    var tags = options.tags;
+    var formats = options.format;
+    var support = options.support;
+    var modulePath = options.modulePath;
+    var coffee = options.coffee;
 
     grunt.verbose.writeflags(options, 'Options');
 
@@ -44,7 +46,6 @@ module.exports = function (grunt) {
 
     var execOptions = ['node', 'node_modules/.bin/cucumber-js'];
 
-    var _ = grunt.util._;
     if (! _.isEmpty(files)) {
       execOptions = execOptions.concat(files);
     }
@@ -80,9 +81,11 @@ module.exports = function (grunt) {
       }
     }
 
-    if (! _.isEmpty(format)) {
-      execOptions.push('-f');
-      execOptions.push(format);
+    if (! _.isEmpty(formats)) {
+      (_.isArray(formats) ? formats : [formats]).forEach(function(format) {
+        execOptions.push('-f');
+        execOptions.push(format);
+      });
     }
 
     if (coffee) {

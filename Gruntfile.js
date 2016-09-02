@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         files: 'features',
         options: {
           steps: 'features/step_definitions',
-          format: 'pretty'
+          format: ['pretty']
         }
       },
       test2: {
