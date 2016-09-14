@@ -111,6 +111,13 @@ Default: `false`
 
 When true, cucumberjs will fail if there are any undefined or pending steps
 
+#### backtrace
+Type: `Boolean`
+
+Default: `false`
+
+When true, cucumberjs will show full backtrace for errors
+
 ### Usage Examples
 
 

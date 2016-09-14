@@ -10,6 +10,7 @@ module.exports = function (grunt) {
     // Load all the options
     var options = this.options();
 
+    var backtrace = options.backtrace;
     var steps = options.steps;
     var tags = options.tags;
     var formats = options.format;
@@ -95,6 +96,10 @@ module.exports = function (grunt) {
 
     if (strict) {
       execOptions.push('--strict');
+    }
+
+    if (backtrace) {
+      execOptions.push('--backtrace');
     }
 
     var cucumberPath = 'cucumber';
