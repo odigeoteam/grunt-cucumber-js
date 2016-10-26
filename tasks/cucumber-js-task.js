@@ -104,7 +104,7 @@ module.exports = function (grunt) {
     }
 
     if (dryRun) {
-        execOptions.push('--dry-run');
+      execOptions.push('--dry-run');
     }
 
     var cucumberPath = 'cucumber';
