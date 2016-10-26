@@ -18,6 +18,7 @@ module.exports = function (grunt) {
     var modulePath = options.modulePath;
     var coffee = options.coffee;
     var strict = options.strict;
+    var dryRun = options.dryRun;
 
     grunt.verbose.writeflags(options, 'Options');
 
@@ -100,6 +101,10 @@ module.exports = function (grunt) {
 
     if (backtrace) {
       execOptions.push('--backtrace');
+    }
+
+    if (dryRun) {
+        execOptions.push('--dry-run');
     }
 
     var cucumberPath = 'cucumber';
