@@ -118,6 +118,13 @@ Default: `false`
 
 When true, cucumberjs will show full backtrace for errors
 
+#### dryRun
+Type: `Boolean`
+
+Default: `false`
+
+When true, cucumberjs will invoke formatters without executing steps
+
 ### Usage Examples
 
 
